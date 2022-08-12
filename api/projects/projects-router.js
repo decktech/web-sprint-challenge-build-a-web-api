@@ -19,10 +19,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', validateProjectId, (req, res) => {
-    Project.get(req.params.id)
-        .then(project => {
-            res.json(req.existingProject);
-        })
+    res.json(req.existingProject)
 })
 
 router.post('/', validateProject, (req, res) => {
